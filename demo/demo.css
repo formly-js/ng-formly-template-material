@@ -1,0 +1,27 @@
+.md-hint {
+  color: #b0b0b0;
+}
+
+.formly-md-input-wrapper {
+  height: 54px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.formly-md-radio-wrapper {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.md-input-full-width {
+  width: 100%;
+}
+
+
+.md-hint-error {
+  color: #d50000
+}
+
+.md-placeholder-error{
+  color: #d50000
+}

@@ -1,0 +1,50 @@
+<md-toolbar color="primary">
+  <button md-icon-button>
+    <md-icon>menu</md-icon>
+  </button>
+  ng2-formly Material example
+</md-toolbar>
+
+<p>This is a small subset of the things that formly can do. See the other examples and the documentation for more.</p>
+
+<md-card>
+  <md-card-title-group color="primary">
+    <md-card-title >Tell us about Yourself</md-card-title>
+    <md-card-subtitle>Please Fill the form as accurately as possible</md-card-subtitle>
+  </md-card-title-group>
+  <md-card-content>
+    <formly-form [model]="user" [fields]="userFields" (formSubmit)="console($event)" [form]="form">
+    </formly-form>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="submit(user)">Submit</button>
+    <button (click)="showEmail()" md-button>Change Email</button>
+    <button (click)="resetForm()" md-button>Reset</button>
+    <button (click)="hide()" md-button>Hide Expression Toggle</button>
+  </md-card-actions>
+
+</md-card>
+
+<h3>Outside Formly</h3>
+<input type="text" [(ngModel)]="user.email" (keyup)="changeEmail()" class="form-control">
+<br><strong>FORM DATA:</strong><br><pre>{{user | json}}</pre><br>
+<hr>
+
+<div style="margin-top:30px">
+  <small>
+    This is an example for the
+    <a href="https://formly-js.github.io/ng2-formly">ng2-formly</a>
+    project made with ♥ by
+    <strong>
+          <span *ngIf="!author.name || !author.url">
+            {{vm.author.name || 'anonymous'}}
+          </span>
+      <a ng-if="vm.author.url" href="{{author.url}}">
+        {{author.name}}
+      </a>
+    </strong>
+    <br />
+    This example is running angular version "{{env.angularVersion}}" and formly version "{{env.formlyVersion}}"
+  </small>
+</div>
+

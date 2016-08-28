@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formly 2 Material Playground</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./demo.css" rel="stylesheet">
+</head>
+<body>
+    <hello-app>Loading...</hello-app>
+</body>
+
+<!-- ES6-related imports -->
+<script src="/node_modules/es6-shim/es6-shim.min.js"></script>
+<script src="/node_modules/zone.js/dist/zone.js"></script>
+<script src="/node_modules/reflect-metadata/Reflect.js"></script>
+<script src="/node_modules/systemjs/dist/system.js"></script>
+<script>
+    //configure system loader
+    System.config({defaultJSExtensions: true, map: {
+    'rxjs': '../node_modules/rxjs',
+    '@angular': '../node_modules/@angular',
+    'ng2-formly': '../node_modules/ng2-formly',
+    '@angular2-material': '../node_modules/@angular2-material'
+  },
+  packages: {
+    '@angular/core': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/compiler': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/common': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/forms': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/platform-browser': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/platform-browser-dynamic': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/router-deprecated': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/router': {
+      main: 'index.js',
+      defaultExtension: 'js'
+    },
+    '@angular/http': {
+      main: 'http.js',
+      defaultExtension: 'js'
+    },
+    'ng2-formly': {
+      main: 'lib/index.js',
+      defaultExtension: 'js'
+    },
+    'rxjs': {
+      defaultExtension: 'js'
+    },
+    '@angular2-material/checkbox': {
+        main: 'checkbox.js',
+          defaultExtension: 'js'
+    },
+    '@angular2-material/input': {
+      main: 'input.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/radio': {
+      main: 'radio.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/button': {
+      main: 'button.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/card': {
+      main: 'card.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/core': {
+      main: 'core.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/icon': {
+      main: 'icon.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/sidenav': {
+      main: 'sidenav.js',
+      defaultExtension: 'js'
+    },
+    '@angular2-material/toolbar': {
+      main: 'toolbar.js',
+      defaultExtension: 'js'
+    }
+  }});
+</script>
+<script src="/node_modules/rxjs/bundles/Rx.js"></script>
+<script>
+    //bootstrap the Angular2 application
+    System.import('../src/hello').catch(console.log.bind(console));
+</script>
+
+</html>
