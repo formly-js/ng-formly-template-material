@@ -3,6 +3,7 @@ import {Component, Renderer, QueryList, ElementRef, ViewChildren} from "@angular
 import {FormBuilder, AbstractControl} from "@angular/forms";
 import {Field, FormlyPubSub, FormlyMessages, FormlyValueChangeEvent} from "ng2-formly";
 import {SingleFocusDispatcher} from "ng2-formly/lib/templates"
+import {MdCheckbox} from "@angular2-material/checkbox";
 
 
 @Component({
@@ -24,7 +25,7 @@ import {SingleFocusDispatcher} from "ng2-formly/lib/templates"
             </div>
         </div>
     `,
-  queries: {inputComponent: new ViewChildren("textAreaElement")}
+  queries: {inputComponent: new ViewChildren("inputElement")}
 })
 export class FormlyFieldMultiCheckbox extends Field {
 
@@ -41,7 +42,7 @@ export class FormlyFieldMultiCheckbox extends Field {
     return this._control = this.formBuilder.group(controlGroupConfig);
   }
 
-  inputComponent: QueryList<ElementRef>;
+  inputComponent: QueryList<MdCheckbox>;
 
   inputChange(e, val) {
     this._model[val] = e.checked;
@@ -50,8 +51,8 @@ export class FormlyFieldMultiCheckbox extends Field {
   }
 
   protected setNativeFocusProperty(newFocusValue: boolean): void {
-    // if (this.inputComponent.length > 0) {
-    //   this.renderer.invokeElementMethod(this.inputComponent.first.nativeElement, "focus", [newFocusValue]);
-    // }
+    if (this.inputComponent.length > 0) {
+      // this.inputComponent.first.focus();
+    }
   }
 }

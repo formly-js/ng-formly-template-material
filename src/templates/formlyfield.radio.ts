@@ -30,9 +30,9 @@ export class FormlyFieldRadio extends Field {
   inputComponent: QueryList<MdRadioButton>;
 
   protected setNativeFocusProperty(newFocusValue: boolean): void {
-    // if (this.inputComponent.length > 0) {
-    //   this.renderer.invokeElementMethod(this.inputComponent.first, "focus", [newFocusValue]);
-    // }
+    if (this.inputComponent.length > 0) {
+      // this.inputComponent.first.focus();
+    }
   }
 
   inputChange(e, val) {

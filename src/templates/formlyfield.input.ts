@@ -1,6 +1,7 @@
 import {Component, ElementRef, AfterViewInit, Renderer, ViewChildren, QueryList} from "@angular/core";
 import {Field, FormlyPubSub, FormlyMessages, FormlyMessage} from "ng2-formly";
 import {SingleFocusDispatcher} from "ng2-formly/lib/templates";
+import {MdInput} from "@angular2-material/input";
 
 @Component({
   selector: "formly-field-input",
@@ -24,11 +25,11 @@ export class FormlyFieldInput extends Field implements AfterViewInit {
     super(fm, ps, renderer, focusDispatcher);
   }
 
-  inputComponent: QueryList<ElementRef>;
+  inputComponent: QueryList<MdInput>;
 
   protected setNativeFocusProperty(newFocusValue: boolean): void {
-    // if (this.inputComponent.length > 0) {
-    //   this.renderer.invokeElementMethod(this.inputComponent.first.nativeElement, "focus", [newFocusValue]);
-    // }
+    if (this.inputComponent.length > 0) {
+      this.inputComponent.first.focus();
+    }
   }
 }

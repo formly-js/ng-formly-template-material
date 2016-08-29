@@ -1,7 +1,8 @@
-import {Component, Renderer, ElementRef, ViewChildren, QueryList} from "@angular/core";
+import {Component, Renderer, ViewChildren, QueryList, AfterContentChecked} from "@angular/core";
 import {AbstractControl, FormBuilder} from "@angular/forms";
 import {Field, FormlyPubSub, FormlyMessages, FormlyValueChangeEvent} from "ng2-formly";
 import {SingleFocusDispatcher} from "ng2-formly/lib/templates"
+import {MdCheckbox} from "@angular2-material/checkbox";
 
 
 @Component({
@@ -27,7 +28,7 @@ export class FormlyFieldCheckbox extends Field {
     super(fm, ps, renderer, focusDispatcher);
   }
 
-  inputComponent: QueryList<ElementRef>;
+  inputComponent: QueryList<MdCheckbox>;
 
   inputChange(e: any, val: any): void {
     this.model = e.checked;
@@ -40,9 +41,8 @@ export class FormlyFieldCheckbox extends Field {
   }
 
   protected setNativeFocusProperty(newFocusValue: boolean): void {
-    // if (this.inputComponent.length > 0) {
-    //   this.renderer.invokeElementMethod(this.inputComponent.first.nativeElement, "focus", [newFocusValue]);
-    // }
+    if (this.inputComponent.length > 0) {
+      // this.inputComponent.first.focus();
+    }
   }
-
 }

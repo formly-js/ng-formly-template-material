@@ -104,7 +104,8 @@ export class HelloApp {
           templateOptions: {
             label: "Street",
             placeholder: "604 Causley Ave. ",
-            description: "Enter a valid US Address"
+            description: "Enter a valid US Address",
+            focus: true
           }
         }, {
           className: "col-xs-3",
